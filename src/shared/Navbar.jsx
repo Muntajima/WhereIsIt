@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
 
     const links = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        <li><a>Home</a></li>
+        <li><a>Lost & Found Items Page</a></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -39,7 +39,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/register'>
+                <Link to='/login'>
                     <a className="btn">Login</a>
                 </Link>
 
