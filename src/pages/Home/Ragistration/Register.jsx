@@ -1,12 +1,26 @@
 import Lottie from "lottie-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import registerLottie from '../../../assets/Lottie/register.json'
+import { FcGoogle } from "react-icons/fc";
+import { toast, ToastContainer } from "react-toastify";
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import AuthContext from "../../../context/Authcontext/AuthContext";
+
 
 const Register = () => {
     const style = {
         height: 500,
     }
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
+    const { 
+        createUser, 
+        googleLogin, 
+        setUser,  
+        updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
+    
     const handleRegister = (e) =>{
         e.preventDefault();
         const form = e.target;
@@ -14,7 +28,39 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        if(!passwordRegex.test(password)){
+            //setError(false);
+            toast.error("Must have an uppercase, a lowercase, and atleast six characters.")
+            return;
+        }
+        else{
+            Swal.fire({
+                title: "Ragistration!",
+                text: "Successful",
+                icon: "success"
+              });
+        }
+
         console.log(name, photo, email, password);
+        createUser(email, password)
+        .then(result =>{
+            const user = result.user;
+            setUser(user);
+            console.log(result.user);
+
+            updateUserProfile({displayName: name, photoURL: photo})
+            .then(() =>{
+                navigate('/');
+            })
+            .catch(error =>{
+                console.log(error.message);
+            })
+        })
+        .catch(error =>{
+            console.log(error.message)
+        })
+
     }
 
     
@@ -32,6 +78,10 @@ const Register = () => {
             </div>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <h1 className="ml-14 mt-12 text-5xl font-bold">Register now!</h1>
+            <Link 
+                        onClick={googleLogin}
+                        className='btn btn-outline w-2/3 bg-rose-900 text-white w-36 mx-auto my-8 font-semibold'><FcGoogle/> Google only</Link>
+                        <p className="underline w-full font-semibold text-center">Or Continue with</p>
                 <form onSubmit={handleRegister} className="card-body">
                 <div className="form-control">
                                     <label className="label">
@@ -76,15 +126,16 @@ const Register = () => {
                                     <button className="btn btn-neutral">Register</button>
                                 </div>
                 </form>
-                <p className="text-center font-semibold">
+                <p className="text-center font-semibold mb-4">
                             Already Have An Account ?{" "}
                             <Link className="text-red-800" to="/login">
                                 Login
                             </Link>
                         </p>
-                        <Link className='btn btn-outline bg-rose-900 text-white w-36 mx-auto my-8 font-semibold'> Google only</Link>
+                        
             </div>
         </div>
+        <ToastContainer/>
     </div>
     );
 };

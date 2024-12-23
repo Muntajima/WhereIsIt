@@ -1,8 +1,23 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../context/Authcontext/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
+import logo from '../../public/lostproperty.png'
 
 
 const Navbar = () => {
+    const { user, userLogout } = useContext(AuthContext);
 
+    const handleLogout = () => {
+        userLogout()
+            .then(() => {
+                toast.success("Successfully sign out.");
+            })
+            .catch(error => {
+                toast("Failed to logout. Stay with us.")
+                console.log(error)
+            })
+    }
     const links = <>
         <li><a>Home</a></li>
         <li><a>Lost & Found Items Page</a></li>
@@ -39,11 +54,46 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login'>
-                    <a className="btn">Login</a>
-                </Link>
+                
+                <div>
+                    {
+                        user &&
+                        <div className="dropdown">
+                            <div className="relative group">
+                            <img src={user?.photoURL} 
+                            tabIndex={0} role="button"
+                            className="w-10 h-10 rounded-full"
+                            />
+                            <div className="absolute bottom-1 right-16 bg-gray-600 text-white text-sm px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+                                {user?.displayName || "No Display Name"}
+                            </div>
+                            </div>
+                            <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li><a>Add Lost & Found Item</a></li>
+                        <li><a>All recover Items</a></li>
+                        <li><a>Manage My Items</a></li>
+                    </ul>
+                        </div>
+                        
+                    }
+                </div>
+                {
+                    user ? <>
+                        <button onClick={handleLogout} className="btn">Logout</button>
+                    </>
+                        :
+                        <>
+                            <Link to='/login'>
+                                <button className="btn">Login</button>
+                            </Link>
+                        </>
+                }
+
 
             </div>
+            <ToastContainer />
         </div>
     );
 };
