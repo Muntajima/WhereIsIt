@@ -1,9 +1,11 @@
 import Banner from "./Banner";
+import LostFoundItems from "./LostFoundItems";
 
 const Home = () => {
     return (
         <div>
-          <Banner/>  
+          <Banner/>
+          <LostFoundItems/>  
         </div>
     );
 };
