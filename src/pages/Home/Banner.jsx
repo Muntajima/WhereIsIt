@@ -7,9 +7,9 @@ import { Slide } from "react-awesome-reveal";
 const Banner = () => {
     return (
         <>
-            <div className="carousel w-full">
+            <div id="default-carousel"  data-carousal="slide" className="carousel w-full">
                 <div id="item1" className="carousel-item w-full">
-                    <div className="hero bg-base-200 min-h-[500px]"
+                    <div className="hero bg-base-200 min-h-[500px] duration-700 ease-in-out" data-carousel-item
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/rynJ4N8/lost1.jpg)",
                         }}>
@@ -41,7 +41,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div id="item2" className="carousel-item w-full">
-                <div className="hero bg-base-200 min-h-[500px]"
+                <div className="hero bg-base-200 min-h-[500px] duration-700 ease-in-out" data-carousel-item
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/gvpDM7X/lost2.jpg)",
                         }}>
@@ -56,7 +56,7 @@ const Banner = () => {
                     
                 </div>
                 <div id="item3" className="carousel-item w-full">
-                <div className="hero bg-base-200 min-h-[500px]"
+                <div className="hero bg-base-200 min-h-[500px] duration-700 ease-in-out" data-carousel-item
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/WGXBkff/lost3.jpg)",
                         }}>
