@@ -4,7 +4,7 @@ import registerLottie from '../../../assets/Lottie/register.json'
 import { FcGoogle } from "react-icons/fc";
 import { toast, ToastContainer } from "react-toastify";
 import Swal from "sweetalert2";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../../context/Authcontext/AuthContext";
 
 
@@ -21,6 +21,10 @@ const Register = () => {
         updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     
+    useEffect(() =>{
+        document.title = "WhereIsIt || Registration"
+    }, [])
+
     const handleRegister = (e) =>{
         e.preventDefault();
         const form = e.target;

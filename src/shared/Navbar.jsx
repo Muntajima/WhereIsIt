@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../context/Authcontext/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
 import logo from '../../public/lostproperty.png'
@@ -19,8 +19,9 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <li><a>Home</a></li>
-        <li><a>Lost & Found Items Page</a></li>
+    <li><NavLink to='/' className='btn'>Home</NavLink></li>
+    <li><NavLink className='btn'>Lost & Found Items Page</NavLink></li>    
+        
     </>
     return (
         <div className="navbar bg-base-100">
@@ -46,7 +47,10 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">WhereIsIt</a>
+                <div className="flex items-center">
+                    <img src={logo} className="w-12 h-9" />
+                <a className="btn btn-ghost text-2xl">WhereIsIt</a>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import { Link, useNavigate } from "react-router-dom";
 import loginLottie from '../../../assets/Lottie/login.json'
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../../context/Authcontext/AuthContext";
 import Swal from "sweetalert2";
 const Login = () => {
@@ -11,6 +11,10 @@ const Login = () => {
 
     const { googleLogin,userLogin, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
+
+    useEffect(() =>{
+        document.title = "WhereIsIt || Login"
+    }, [])
     const handleLogin = (e) =>{
         e.preventDefault();
         const form = e.target;

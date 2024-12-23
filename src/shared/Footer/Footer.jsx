@@ -1,4 +1,4 @@
-
+import logo from '../../../public/lostproperty.png'
 
 const Footer = () => {
     return (
@@ -19,6 +19,9 @@ const Footer = () => {
                     <a className="link link-hover">Press kit</a>
                 </nav>
                 <nav>
+                    <div className='flex gap-4 items-center'>
+                    <div><img src={logo} className='w-22 h-20' /></div>
+                    <div>
                     <h6 className="footer-title">Social</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a>
@@ -55,11 +58,15 @@ const Footer = () => {
                             </svg>
                         </a>
                     </div>
+                    </div>
+                    </div>
+                    
                 </nav>
             </footer>
             <footer className="footer bg-base-300">
                 <nav className="lg:flex lg:gap-[500px]">
-                    <div className="w-[250px] h-[100px] bg-red-500 text-center pt-9 text-2xl font-bold text-white ml-36">WhereIsIt</div>
+                    <div className="w-[250px] h-[100px] bg-red-500 text-center pt-9 text-2xl font-bold text-white ml-36">
+                        WhereIsIt</div>
                     <div>
                         <p className="pt-9">{new Date().getFullYear()} - ©All right reserved by Muntajima Mahbub</p>
                     </div>
@@ -70,11 +77,3 @@ const Footer = () => {
 };
 
 export default Footer;
-{/* <div>
-            <nav>
-                <div>WhereIsIt</div>
-                <div>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
-                </div>
-            </nav>
-            </div> */}
