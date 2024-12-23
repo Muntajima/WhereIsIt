@@ -1,26 +1,88 @@
+import Lottie from "lottie-react";
+import lostLottie1 from '../../assets/Lottie/lostLotti1.json';
+import lostLottie2 from '../../assets/Lottie/lostLotti2.json';
+import { Slide } from "react-awesome-reveal";
 
 
 const Banner = () => {
     return (
-        <div className="hero bg-base-200 min-h-screen"
-        style={{
-            backgroundImage: "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
-          }}>
-            
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <img
-                    src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                    className="max-w-sm rounded-lg shadow-2xl" />
-                <div>
-                    <h1 className="text-5xl font-bold">Box Office News!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
-                    </p>
-                    <button className="btn btn-primary">Get Started</button>
+        <>
+            <div className="carousel w-full">
+                <div id="item1" className="carousel-item w-full">
+                    <div className="hero bg-base-200 min-h-[500px]"
+                        style={{
+                            backgroundImage: "url(https://i.ibb.co.com/rynJ4N8/lost1.jpg)",
+                        }}>
+
+                        <div className="hero-content flex-col lg:flex-row-reverse">
+                            <div className="flex-1 relative">
+                                <Slide direction="right"
+                                    duration={2000}
+                                >
+                                    <Lottie animationData={lostLottie1}
+                                        className="absolute w-1/3 rounded-lg shadow-2xl -top-40 right-10"
+                                    ></Lottie>
+                                </Slide>
+                                <Slide direction="left"
+                                    duration={2000}
+                                >
+                                    <Lottie animationData={lostLottie2}
+                                        className="w-1/3 rounded-lg shadow-2xl absolute -top-20 left-56"
+                                    ></Lottie>
+                                </Slide>
+                            </div>
+
+
+                            <div className="flex-1">
+                                <h1 className="text-3xl font-bold pl-24">Managing lost items no longer a million-dollar headache with <span className="text-red-600">WhereIsIt</span> Lost and Found Page</h1>
+                                <button className="btn btn-primary ml-24 mt-4">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div id="item2" className="carousel-item w-full">
+                <div className="hero bg-base-200 min-h-[500px]"
+                        style={{
+                            backgroundImage: "url(https://i.ibb.co.com/gvpDM7X/lost2.jpg)",
+                        }}>
+
+                        <div className="hero-content">
+                        <div className="">
+                                <h1 className="text-3xl font-bold pl-96 text-blue-500">Our Online Lost & Found <br />can Help you Find what you are Looking For!</h1>
+                                <button className="btn btn-primary ml-96 mt-4">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="item3" className="carousel-item w-full">
+                <div className="hero bg-base-200 min-h-[500px]"
+                        style={{
+                            backgroundImage: "url(https://i.ibb.co.com/WGXBkff/lost3.jpg)",
+                        }}>
+
+                        <div className="hero-content flex-col lg:flex-row-reverse">
+                            
+
+
+                            <div className="text-left">
+                                <h1 className="text-3xl font-bold pr-8 w-2/3">IF YOU LOST SOMEONE OR SOMETHING BUT FOUND YOURSELF... <br /> YOU'VE WON</h1>
+                                <button className="btn btn-primary ml-24 mt-4">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
             </div>
-        </div>);
+            <div className="flex w-full justify-center gap-2 py-2">
+                <a href="#item1" className="btn btn-xs">1</a>
+                <a href="#item2" className="btn btn-xs">2</a>
+                <a href="#item3" className="btn btn-xs">3</a>
+            </div>
+        </>
+
+    );
 };
 
 export default Banner;
