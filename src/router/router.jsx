@@ -8,6 +8,7 @@ import Register from "../pages/Home/Ragistration/Register";
 import Error from "../pages/Home/Error/Error";
 import Detailes from "../pages/Lost&Found/Detailes";
 import LostFoundItems from "../pages/Home/LostFoundItems";
+import AllItems from "../pages/AllItems/AllItems";
 
 
   const router = createBrowserRouter([
@@ -29,6 +30,11 @@ import LostFoundItems from "../pages/Home/LostFoundItems";
           path: '/items/:id',
           element: <Detailes/>,
           loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+        },
+        {
+          path: '/all-items',
+          element: <AllItems/>,
+          loader: () => fetch('http://localhost:5000/items') 
         },
         {
             path: 'login',

@@ -8,11 +8,11 @@ import Swal from "sweetalert2";
 const Detailes = () => {
     const data = useLoaderData() || {};
     const { _id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = data;
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [startDate, setStartDate] = useState(new Date());
     console.log(data)
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
         const location = form.location.value;
@@ -29,30 +29,33 @@ const Detailes = () => {
             },
             body: JSON.stringify(recoveredData)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => console.log(data))
 
         fetch(`http://localhost:5000/items/${data._id}/recover`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
         })
-        .then(res => {
-            if(!res.ok){
-                Swal.fire({title: "Oops!",
-                    text: 'Item is already recoveredData.'})
-            }
-            return res.json();
-        })
-        
-        
+            .then(res => {
+                if (!res.ok) {
+                    Swal.fire({
+                        title: "Oops!",
+                        text: 'Item is already recoveredData.'
+                    })
+                }
+                return res.json();
+            })
+
+
         document.getElementById('my_modal_5').close();
     }
     return (
-        <div>
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4">
-                <a href="#">
-                    <img className="rounded-t-lg h-[200px] mx-auto mt-4" src={thumbnail} alt="" />
-                </a>
+        <div className="flex justify-between gap-20 items-center ml-36 mb-24">
+            
+           <div>
+           <a href="#" className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={thumbnail} alt="" />
+                <div className="flex flex-col justify-between p-4 leading-normal">
                 <div className="p-5">
                     <a href="#">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
@@ -81,7 +84,7 @@ const Detailes = () => {
                         </p>
                     </div>
                     <div className="card-actions justify-between items-center pt-4">
-                        <Link to={`/items/${_id}`} className="hover:font-bold pt-1">See Details</Link>
+                        <Link to={`/items/${_id}`} className="underline font-semibold hover:text-red-700 pt-5">See Details</Link>
                         <button
                             onClick={() => document.getElementById('my_modal_5').showModal()}
                             className={`mt-6 px-4 py-2 rounded text-white ${data.postType === "Lost" ? "bg-red-500" : "bg-green-500"
@@ -107,7 +110,7 @@ const Detailes = () => {
                                         <div className="mb-4">
                                             <label className="block text-gray-700 font-medium">Recovered Date</label>
                                             <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}
-                                            name="date" />
+                                                name="date" />
                                         </div>
                                         <div className="mb-4">
                                             <label className="block text-gray-700 font-medium">Recovered By</label>
@@ -133,10 +136,17 @@ const Detailes = () => {
                             </div>
                         </dialog>
                     </div>
-                    </div>
-                    </div>
-                    </div>
-                    );
+                </div>
+                </div>
+            </a>
+           </div>
+           <div>
+            <img src="https://i.ibb.co.com/qCGWfPW/foundlogo.webp"
+            className="w-2/5"
+            />
+            </div>
+        </div>
+    );
 };
 
-                    export default Detailes;
+export default Detailes;
