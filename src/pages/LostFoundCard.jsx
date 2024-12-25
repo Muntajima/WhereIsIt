@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+//import { useEffect, useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const LostFoundCard = ({ item }) => {
-    const { id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = item;
+    const { _id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = item;
 
     
+    // console.log(_id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail)
     return (
         <div>
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4">
                 <a href="#">
-                    <img className="rounded-t-lg h-[200px] mx-auto" src={thumbnail} alt="" />
+                    <img className="rounded-t-lg h-[200px] mx-auto mt-4" src={thumbnail} alt="" />
                 </a>
                 <div className="p-5">
                     <a href="#">
@@ -40,7 +41,7 @@ const LostFoundCard = ({ item }) => {
                         </p>
                     </div>
                     <div className="card-actions justify-between items-center pt-4">
-                        <Link className= "hover:font-bold pt-1">See Details</Link>
+                        <Link to={`/items/${_id}`} className= "hover:font-bold pt-1">See Details</Link>
                         <span
                             className={`badge w-24 ${postType === "Lost"
                                 ? "badge-error"

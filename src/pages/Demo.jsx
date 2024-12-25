@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 //import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const LostFoundCard = () => {
+const Demo = () => {
 
     const handleSubmit = () =>{
 
@@ -133,4 +133,4 @@ const LostFoundCard = () => {
     );
 };
 
-export default LostFoundCard;
+export default Demo;
