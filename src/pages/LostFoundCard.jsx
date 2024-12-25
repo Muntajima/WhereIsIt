@@ -1,5 +1,7 @@
-//import { useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 
 
 const LostFoundCard = ({ item }) => {
@@ -60,5 +62,18 @@ const LostFoundCard = ({ item }) => {
 
     );
 };
-
+LostFoundCard.propTypes = {
+    item: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        postType: PropTypes.string.isRequired,
+        thumbnail: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        dateLost: PropTypes.string.isRequired, 
+        contactName: PropTypes.string.isRequired,
+        contactEmail: PropTypes.string.isRequired,
+    }).isRequired,
+};
 export default LostFoundCard;

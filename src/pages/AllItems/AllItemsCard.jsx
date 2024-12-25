@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 
 const AllItemsCard = ({ item }) => {
     const { _id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = item;
@@ -62,4 +62,18 @@ const AllItemsCard = ({ item }) => {
     );
 };
 
+AllItemsCard.propTypes = {
+    item: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        postType: PropTypes.string.isRequired,
+        thumbnail: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        category: PropTypes.string.isRequired,
+        location: PropTypes.string.isRequired,
+        dateLost: PropTypes.string.isRequired, // or `PropTypes.instanceOf(Date)` if it's a Date object
+        contactName: PropTypes.string.isRequired,
+        contactEmail: PropTypes.string.isRequired,
+    }).isRequired,
+};
 export default AllItemsCard;

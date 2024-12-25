@@ -9,6 +9,7 @@ import Error from "../pages/Home/Error/Error";
 import Detailes from "../pages/Lost&Found/Detailes";
 import LostFoundItems from "../pages/Home/LostFoundItems";
 import AllItems from "../pages/AllItems/AllItems";
+import PrivateRoute from "./PrivateRoute";
 
 
   const router = createBrowserRouter([
@@ -28,7 +29,7 @@ import AllItems from "../pages/AllItems/AllItems";
         },
         {
           path: '/items/:id',
-          element: <Detailes/>,
+          element: <PrivateRoute><Detailes/></PrivateRoute>,
           loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
         },
         {
