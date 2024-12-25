@@ -12,7 +12,7 @@ const LostFoundItems = () => {
     console.log(products)
 
     useEffect(() =>{
-        fetch('http://localhost:5000/items')
+        fetch('https://where-is-it-jet.vercel.app/items')
         .then(res => res.json())
         .then(data =>{
             const copyData = [...data];

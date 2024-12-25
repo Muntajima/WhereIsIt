@@ -25,17 +25,18 @@ import PrivateRoute from "./PrivateRoute";
         {
           path: '/lost-found-items',
           element: <LostFoundItems/>,
-          loader: () => fetch('http://localhost:5000/items') 
+          loader: () => fetch('https://where-is-it-jet.vercel.app/items') 
         },
         {
           path: '/items/:id',
-          element: <PrivateRoute><Detailes/></PrivateRoute>,
-          loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+          element: <PrivateRoute><Detailes/>
+          </PrivateRoute>,
+          loader: ({ params }) => fetch(`https://where-is-it-jet.vercel.app/items/${params.id}`)
         },
         {
           path: '/all-items',
           element: <AllItems/>,
-          loader: () => fetch('http://localhost:5000/items') 
+          loader: () => fetch('https://where-is-it-jet.vercel.app/items') 
         },
         {
             path: 'login',

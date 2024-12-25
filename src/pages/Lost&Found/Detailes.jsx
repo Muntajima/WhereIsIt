@@ -22,7 +22,7 @@ const Detailes = () => {
             location, date
         };
 
-        fetch('http://localhost:5000/recovered-data', {
+        fetch('https://where-is-it-jet.vercel.app/recovered-data', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -32,7 +32,7 @@ const Detailes = () => {
             .then(res => res.json())
             .then(data => console.log(data))
 
-        fetch(`http://localhost:5000/items/${data._id}/recover`, {
+        fetch(`https://where-is-it-jet.vercel.app/items/${data._id}/recover`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
         })
