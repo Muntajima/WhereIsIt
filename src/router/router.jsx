@@ -49,17 +49,17 @@ import AllRecoverdItems from "../pages/AllRecoverd/AllRecoverdItems";
         {
           path: '/myItems',
           element: <MyItems/>,
-          loader: () => fetch("http://localhost:5000/items")
+          loader: () => fetch("https://where-is-it-jet.vercel.app/items")
         },
         {
           path: '/updateItems/:id',
           element: <Updated/>,
-          loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+          loader: ({params}) => fetch(`https://where-is-it-jet.vercel.app/items/${params.id}`)
         },
         {
           path: '/allRecovered ',
           element: <AllRecoverdItems/>,
-          loader: () => fetch("http://localhost:5000/items")
+          loader: () => fetch("https://where-is-it-jet.vercel.app/items")
         },
         {
             path: 'login',

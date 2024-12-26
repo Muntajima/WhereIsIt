@@ -34,7 +34,7 @@ const Updated = () => {
         const updatedItem = { _id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail };
         //console.log(updatedItem);
 
-        fetch( `http://localhost:5000/items/${items._id}`, {
+        fetch( `https://where-is-it-jet.vercel.app/items/${items._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

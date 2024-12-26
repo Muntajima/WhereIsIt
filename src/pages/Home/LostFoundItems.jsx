@@ -6,36 +6,41 @@ import { useLoaderData } from "react-router-dom";
 
 const LostFoundItems = () => {
 
-    const [ items, setItems ] = useState([]);
-
+    const [items, setItems] = useState([]);
+    const [allItems, setAllItems] = useState([]);
     const products = useLoaderData() || {};
-  
-    useEffect(() =>{
-        fetch('https://where-is-it-jet.vercel.app/items')
-        .then(res => res.json())
-        .then(data =>{
-            const copyData = [...data];
-            setItems(copyData.slice(0, 6));
 
-        } )
+    useEffect(() => {
+        fetch('https://where-is-it-jet.vercel.app/items')
+            .then(res => res.json())
+            .then(data => {
+                const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                setAllItems(sortedData); // Store all items
+                setItems(sortedData.slice(0, 6));
+
+            })
     }, [])
 
-    const handleSeeAll = () =>{
-        if(items.length < products.length){
-            setItems(products)
-        }
+    const handleSeeAll = () => {
+        setItems(allItems);
     }
-    
+
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
-            {
-                items.map(item => <LostFoundCard
-                key={item._id}
-                item={item}
-                />)
-            }
-            <div><button onClick={handleSeeAll} className="btn btn-accent px-8 py-2">See All</button></div>
+        <div>
+            <h2 className="text-2xl font-bold text-center py-6">Latest Lost & Found Items</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
+                {items.map((item) => (
+                    <LostFoundCard key={item._id} item={item} />
+                ))}
+            </div>
+            {items.length < allItems.length && (
+                <div className="text-center py-6">
+                    <button onClick={handleSeeAll} className="btn btn-accent px-8 py-2">
+                        See All
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

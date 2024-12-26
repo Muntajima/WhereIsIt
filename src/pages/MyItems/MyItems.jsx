@@ -30,7 +30,7 @@ const MyItems = () => {
           }).then((result) => {
             if (result.isConfirmed) {
                           
-              fetch(`http://localhost:5000/items/${_id}`, {
+              fetch(`https://where-is-it-jet.vercel.app/items/${_id}`, {
                 method: 'DELETE'
               })
               .then(res => res.json())
@@ -56,20 +56,20 @@ const MyItems = () => {
             <table className="table-auto border-collapse border border-gray-300 w-full">
                 <thead>
                     <tr>
-                        <th className="border border-gray-300 px-4 py-2">Image</th>
-                        <th className="border border-gray-300 px-4 py-2">Title</th>
-                        <th className="border border-gray-300 px-4 py-2">Description</th>
-                        <th className="border border-gray-300 px-4 py-2">Location</th>
-                        <th className="border border-gray-300 px-4 py-2"></th>
+                        <th className="border border-gray-300 px-2 sm:px-4 py-2">Image</th>
+                        <th className="border border-gray-300 px-2 sm:px-4 py-2">Title</th>
+                        <th className="border border-gray-300 px-2 sm:px-4 py-2">Description</th>
+                        <th className="border border-gray-300 px-2 sm:px-4 py-2">Location</th>
+                        <th className="border border-gray-300 px-2 sm:px-4 py-2"></th>
                     </tr>
                 </thead>
                 <tbody>
                     {myItems.map((item) => (
                         <tr key={item._id}>
-                            <td className="border border-gray-300 px-4 py-2"><img src={item.thumbline} className="w-[200px]" /></td>
-                            <td className="border border-gray-300 px-4 py-2">{item.title}</td>
-                            <td className="border border-gray-300 px-4 py-2">{item.description}</td>
-                            <td className="border border-gray-300 px-4 py-2">{item.location}</td>
+                            <td className="border border-gray-300 sm:px-4 py-2"><img src={item.thumbline} className="w-[200px]" /></td>
+                            <td className="border border-gray-300 sm:px-4 py-2">{item.title}</td>
+                            <td className="border border-gray-300 sm:px-4 py-2">{item.description}</td>
+                            <td className="border border-gray-300 sm:px-4 py-2">{item.location}</td>
                             <td className="border border-gray-300">
                                 <div className="flex flex-col">
                                 <Link to={`/updateItems/${item._id}`}

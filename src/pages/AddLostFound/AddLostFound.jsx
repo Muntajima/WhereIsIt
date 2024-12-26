@@ -44,7 +44,7 @@ const AddLostFound = () => {
         //console.log(newPost);
 
 
-        fetch('http://localhost:5000/addItems', {
+        fetch('https://where-is-it-jet.vercel.app/addItems', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
