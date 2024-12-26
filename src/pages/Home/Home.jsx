@@ -1,3 +1,4 @@
+import HelpLine from "../../context/Authcontext/HelpLine";
 import Banner from "./Banner";
 import LostFoundItems from "./LostFoundItems";
 
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
           <Banner/>
           <LostFoundItems/>  
+          <HelpLine/>
         </div>
     );
 };
