@@ -11,6 +11,9 @@ import LostFoundItems from "../pages/Home/LostFoundItems";
 import AllItems from "../pages/AllItems/AllItems";
 import PrivateRoute from "./PrivateRoute";
 import AddLostFound from "../pages/AddLostFound/AddLostFound";
+import MyItems from "../pages/MyItems/MyItems";
+import Updated from "../pages/MyItems/Updated";
+import AllRecoverdItems from "../pages/AllRecoverd/AllRecoverdItems";
 
 
   const router = createBrowserRouter([
@@ -35,13 +38,28 @@ import AddLostFound from "../pages/AddLostFound/AddLostFound";
           loader: ({ params }) => fetch(`https://where-is-it-jet.vercel.app/items/${params.id}`)
         },
         {
-          path: '/all-items',
+          path: '/allItems',
           element: <AllItems/>,
           loader: () => fetch('https://where-is-it-jet.vercel.app/items') 
         },
         {
-          path: 'add-lost-found',
+          path: '/addItems',
           element: <AddLostFound/>
+        },
+        {
+          path: '/myItems',
+          element: <MyItems/>,
+          loader: () => fetch("http://localhost:5000/items")
+        },
+        {
+          path: '/updateItems/:id',
+          element: <Updated/>,
+          loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+        },
+        {
+          path: '/allRecovered ',
+          element: <AllRecoverdItems/>,
+          loader: () => fetch("http://localhost:5000/items")
         },
         {
             path: 'login',

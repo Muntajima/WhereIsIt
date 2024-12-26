@@ -121,6 +121,7 @@ const Detailes = () => {
                                             <div className="flex items-center gap-4">
                                                 {/* <img src={user.email} alt={user.name} className="w-12 h-12 rounded-full" /> */}
                                                 <div>
+                                                    <img src={user.photoURL} className="w-20 h-20" />
                                                     <p><strong>Name: </strong>{user.displayName}</p>
                                                     <p className="text-sm text-gray-600"><strong>Email:  </strong>{user.email}</p>
                                                 </div>
@@ -144,11 +145,7 @@ const Detailes = () => {
                 </div>
             </a>
            </div>
-           <div>
-            <img src="https://i.ibb.co.com/qCGWfPW/foundlogo.webp"
-            className="w-2/5"
-            />
-            </div>
+           
         </div>
     );
 };

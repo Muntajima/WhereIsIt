@@ -28,15 +28,15 @@ const Navbar = () => {
     }
     const links = <>
         <li><NavLink to='/' className='btn'>Home</NavLink></li>
-        <li><NavLink to='/all-items' className='btn'>Lost & Found Items Page</NavLink></li>
+        <li><NavLink to='/allItems' className='btn'>Lost & Found Items Page</NavLink></li>
         {
-            user && <NavLink to={'/add-lost-found'} className='btn'>Add Lost & Found Item</NavLink>
+            user && <NavLink to={'/addItems'} className='btn'>Add Lost & Found Item</NavLink>
         }
          {
-            user && <NavLink className='btn'>All Recovered Items</NavLink>
+            user && <NavLink to={'/allRecovered '} className='btn'>All Recovered Items</NavLink>
         }
          {
-            user && <NavLink className='btn'>Manage My Items</NavLink>
+            user && <NavLink to={'/myItems'} className='btn'>Manage My Items</NavLink>
         }
 
     </>
@@ -93,7 +93,7 @@ const Navbar = () => {
                             <ul
                                 tabIndex={0}
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                                <li><Link to='/add-lost-found'>Add Lost & Found Item</Link></li>
+                                <li><Link to='/addItems'>Add Lost & Found Item</Link></li>
                                 <li><Link>All recover Items</Link></li>
                                 <li><Link>Manage My Items</Link></li>
                             </ul>

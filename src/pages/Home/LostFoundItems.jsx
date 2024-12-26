@@ -9,8 +9,7 @@ const LostFoundItems = () => {
     const [ items, setItems ] = useState([]);
 
     const products = useLoaderData() || {};
-    console.log(products)
-
+  
     useEffect(() =>{
         fetch('https://where-is-it-jet.vercel.app/items')
         .then(res => res.json())
