@@ -9,6 +9,7 @@ const AllRecoverdItems = () => {
     const { user } = useContext(AuthContext);
     const items = useLoaderData();
     const [recoverdItems, setRecoverdItems] = useState([items])
+    const [isTableLayout, setIsTableLayout] = useState(false);
 
     useEffect(() => {
         if (user) {
@@ -25,7 +26,19 @@ const AllRecoverdItems = () => {
                 </Fade>
                 
             <h2 className="text-2xl font-bold text-center py-12">ALL Recoverd Items of you</h2>
-            <table className="table-auto border-collapse border border-gray-300 w-full">
+
+            <div className="flex justify-end mb-4">
+                    <button
+                        className="btn btn-outline"
+                        onClick={() => setIsTableLayout(!isTableLayout)}
+                    >
+                        {isTableLayout ? "Switch to Card Layout" : "Switch to Table Layout"}
+                    </button>
+                </div>
+                {
+                    isTableLayout ? 
+                    <div>
+                        <table className="table-auto border-collapse border border-gray-300 w-full">
                 <thead>
                     <tr>
                         <th className="border border-gray-300 px-4 py-2">Image</th>
@@ -49,6 +62,29 @@ const AllRecoverdItems = () => {
                     ))}
                 </tbody>
             </table>
+                    </div> :
+                    <div>
+                        <div className="grid grid-cols-3 gap-4">
+                        {recoverdItems.map((item) => (
+                            <div
+                                key={item._id}
+                                className="card bg-base-100 shadow-md border border-gray-300"
+                            >
+                                <figure>
+                                    <img src={item.thumbline} className="w-full h-[200px] object-cover" alt={item.title} />
+                                </figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">{item.title}</h2>
+                                    <p>{item.description}</p>
+                                    <p className="text-gray-600">Location: {item.location}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    </div>
+                }
+
+            
         </div>
         </div>
     );
