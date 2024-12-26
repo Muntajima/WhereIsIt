@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginLottie from '../../../assets/Lottie/login.json'
 import { useContext, useEffect } from "react";
 import AuthContext from "../../../context/Authcontext/AuthContext";
@@ -11,6 +11,9 @@ const Login = () => {
 
     const { googleLogin,userLogin, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state || '/'
 
     useEffect(() =>{
         document.title = "WhereIsIt || Login"
@@ -25,7 +28,7 @@ const Login = () => {
         .then(result =>{
             setUser(result.user)
             console.log(result.user)
-            navigate('/')
+            navigate(from)
             Swal.fire({
                 title: "Sweet!",
                 text: "You are our authorized user",

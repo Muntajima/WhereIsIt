@@ -10,6 +10,7 @@ import Detailes from "../pages/Lost&Found/Detailes";
 import LostFoundItems from "../pages/Home/LostFoundItems";
 import AllItems from "../pages/AllItems/AllItems";
 import PrivateRoute from "./PrivateRoute";
+import AddLostFound from "../pages/AddLostFound/AddLostFound";
 
 
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ import PrivateRoute from "./PrivateRoute";
           path: '/all-items',
           element: <AllItems/>,
           loader: () => fetch('https://where-is-it-jet.vercel.app/items') 
+        },
+        {
+          path: 'add-lost-found',
+          element: <AddLostFound/>
         },
         {
             path: 'login',

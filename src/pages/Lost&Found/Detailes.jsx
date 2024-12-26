@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { Link, useLoaderData } from "react-router-dom";
 import AuthContext from "../../context/Authcontext/AuthContext";
@@ -10,7 +10,11 @@ const Detailes = () => {
     const { _id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail } = data;
     const { user } = useContext(AuthContext);
     const [startDate, setStartDate] = useState(new Date());
-    console.log(data)
+    //console.log(data)
+
+    useEffect(() =>{
+        document.title = 'WhereIsIt || Details'
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();

@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import AllItemsCard from "./AllItemsCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -8,6 +8,10 @@ const AllItems = () => {
     const items = useLoaderData();
     const [search, setSearch] = useState("");
     const [filteredItem, setFilteredItem] = useState(items);
+
+    useEffect(() =>{
+            document.title = 'WhereIsIt || Lost & Found'
+        }, []);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -44,7 +48,7 @@ const AllItems = () => {
                 </div>
             </div>
             <div className="container mx-auto">
-                <h1 className="text-3xl font-bold mb-6">Lost & Found Items</h1>
+                <h1 className="text-3xl font-bold my-6 text-center">Lost & Found Items</h1>
                 <div className="mb-4">
                     <input
                         type="text"
