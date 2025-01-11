@@ -29,7 +29,7 @@ const LostFoundItems = () => {
     return (
         <div>
             <h2 className="text-2xl font-bold text-center py-6">Latest Lost & Found Items</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6">
                 {items.map((item) => (
                     <LostFoundCard key={item._id} item={item} />
                 ))}

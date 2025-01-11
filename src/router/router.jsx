@@ -14,6 +14,7 @@ import AddLostFound from "../pages/AddLostFound/AddLostFound";
 import MyItems from "../pages/MyItems/MyItems";
 import Updated from "../pages/MyItems/Updated";
 import AllRecoverdItems from "../pages/AllRecoverd/AllRecoverdItems";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 
   const router = createBrowserRouter([
@@ -69,6 +70,10 @@ import AllRecoverdItems from "../pages/AllRecoverd/AllRecoverdItems";
             path: 'register',
             element: <Register/>
         },
+        {
+          path: 'contact-us',
+          element: <ContactUs/>
+        }
       ]
     },
   ]);

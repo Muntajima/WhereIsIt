@@ -25,7 +25,7 @@ const HelpLine = () => {
                         <h2 className="card-title">For Lost Items!</h2>
                         
                         <div className="card-actions justify-end">
-                            <Link to='/footer' className="btn btn-sm bg-purple-600 text-white rounded-full text-sm">Contact Us</Link>
+                            <Link to='/contact-us' className="btn btn-sm bg-purple-600 text-white rounded-full text-sm">Contact Us</Link>
                             
                         </div>
                     </div>
@@ -36,7 +36,7 @@ const HelpLine = () => {
                         <h2 className="card-title">For Founder</h2>
                         
                         <div className="card-actions justify-end">
-                            <Link to='/footer' className="btn btn-sm bg-purple-600 text-white rounded-full text-sm">Contact Us</Link>
+                            <Link to='/contact-us' className="btn btn-sm bg-purple-600 text-white rounded-full text-sm">Contact Us</Link>
                             
                         </div>
                     </div>

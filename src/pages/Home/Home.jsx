@@ -1,4 +1,5 @@
 import HelpLine from "../../context/Authcontext/HelpLine";
+import Video from "../Video/Video";
 import Banner from "./Banner";
 import LostFoundItems from "./LostFoundItems";
 
@@ -8,6 +9,7 @@ const Home = () => {
           <Banner/>
           <LostFoundItems/>  
           <HelpLine/>
+          <Video/>
         </div>
     );
 };

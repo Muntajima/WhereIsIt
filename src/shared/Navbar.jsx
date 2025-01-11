@@ -29,9 +29,9 @@ const Navbar = () => {
     const links = <>
         <li><NavLink to='/' className='btn'>Home</NavLink></li>
         <li><NavLink to='/allItems' className='btn'>Lost & Found Items Page</NavLink></li>
-        {
-            user && <NavLink to={'/addItems'} className='btn'>Add Lost & Found Item</NavLink>
-        }
+        <NavLink to={'/addItems'} className='btn'>Add Lost & Found Item</NavLink>
+        <NavLink to={'/contact-us'} className='btn'>Contact us</NavLink>
+
          {
             user && <NavLink to={'/allRecovered '} className='btn'>All Recovered Items</NavLink>
         }

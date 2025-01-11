@@ -88,7 +88,7 @@ const Footer = () => {
 
             <footer className="footer bg-base-300">
                 <nav className="lg:flex lg:gap-[500px]">
-                    <div className="w-[250px] h-[100px] bg-red-500 text-center pt-9 text-2xl font-bold text-white ml-36">
+                    <div className="w-[250px] h-[100px] bg-[#d11818] text-center pt-9 text-2xl font-bold text-white ml-36">
                         WhereIsIt</div>
                     <div>
                         <p className="pt-9">{new Date().getFullYear()} - ©All right reserved by Muntajima Mahbub</p>

@@ -41,7 +41,7 @@ const AllItemsCard = ({ item }) => {
                         </p>
                     </div>
                     <div className="card-actions justify-between items-center pt-4">
-                        <Link to={`/items/${_id}`} className= "hover:font-bold pt-1">View Details</Link>
+                        <Link to={`/items/${_id}`} className= "hover:font-bold pt-1 border-2 px-4 rounded-lg">View Details</Link>
                         <span
                             className={`badge w-24 ${postType === "Lost"
                                 ? "badge-error"

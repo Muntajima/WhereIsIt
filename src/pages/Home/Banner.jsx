@@ -2,6 +2,7 @@ import Lottie from "lottie-react";
 import lostLottie1 from '../../assets/Lottie/lostLotti1.json';
 import lostLottie2 from '../../assets/Lottie/lostLotti2.json';
 import { Slide } from "react-awesome-reveal";
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -35,7 +36,9 @@ const Banner = () => {
 
                             <div className="flex-1">
                                 <h1 className="text-3xl font-bold pl-24">Managing lost items no longer a million-dollar headache with <span className="text-red-600">WhereIsIt</span> Lost and Found Page</h1>
-                                <button className="btn btn-primary ml-24 mt-4">Get Started</button>
+                                <Link to='/lost-found-items'>
+                                <button className="btn bg-blue-300 ml-24 mt-4">Get Started</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -49,7 +52,9 @@ const Banner = () => {
                         <div className="hero-content">
                         <div className="">
                                 <h1 className="text-3xl font-bold pl-96 text-blue-500">Our Online Lost & Found <br />can Help you Find what you are Looking For!</h1>
-                                <button className="btn btn-primary ml-96 mt-4">Get Started</button>
+                                <Link to='/lost-found-items'>
+                                <button className="btn bg-blue-500 ml-96 mt-4">Get Started</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -67,7 +72,10 @@ const Banner = () => {
 
                             <div className="text-left">
                                 <h1 className="text-3xl font-bold pr-8 w-2/3">IF YOU LOST SOMEONE OR SOMETHING BUT FOUND YOURSELF... <br /> YOU'VE WON</h1>
-                                <button className="btn btn-primary ml-24 mt-4">Get Started</button>
+                                <Link to='/lost-found-items'>
+                                <button className="btn ml-24 mt-4">Get Started</button>
+                                </Link>
+                                
                             </div>
                         </div>
                     </div>
