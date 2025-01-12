@@ -93,10 +93,3 @@
 
 ---
 
-## **Installation**  
-
-1. **Clone the repositories**:  
-
-   ```bash
-   git clone https://github.com/programming-hero-web-course2/b10a11-client-side-Muntajima.git
-   git clone https://github.com/programming-hero-web-course2/b10a11-server-side-Muntajima.git
