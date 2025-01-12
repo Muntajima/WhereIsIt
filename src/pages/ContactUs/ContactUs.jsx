@@ -31,7 +31,7 @@ const ContactUs = () => {
     return (
         <div>
             
-            <form ref={form} onSubmit={sendEmail} className="card-body mx-44">
+            <form ref={form} onSubmit={sendEmail} className="card-body lg:mx-44">
             <div className="form-control">
                     <label className="label">
                         <span className="label-text">Name</span>

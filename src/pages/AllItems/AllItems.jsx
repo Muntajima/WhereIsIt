@@ -55,12 +55,12 @@ const AllItems = () => {
                         placeholder="Search by title or location"
                         value={search}
                         onChange={handleSearch}
-                        className="w-full p-2 border rounded"
+                        className="w-96 ml-16 lg:w-full lg:ml-0 p-2 border rounded"
                     />
 
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ml-12 lg:ml-0 gap-6">
                     {filteredItem.length > 0 ? (
                         filteredItem.map((item) => <AllItemsCard key={item._id} item={item} />)
                     ) : (

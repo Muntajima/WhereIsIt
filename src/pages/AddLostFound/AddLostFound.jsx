@@ -94,7 +94,7 @@ const AddLostFound = () => {
                             backgroundImage: "url(https://i.ibb.co.com/0tx4dWW/happy.jpg)",
                         }}>
 
-                        <div className="mb-64 mr-6">
+                        <div className="mb-24 lg:mb-64 mr-6 ml-12 ">
                             <h1 className="text-5xl font-bold">We’ve created many happy losers!</h1>
                             <p className="pl-4">WhereIsIt reunites people with Lost & Found property</p>
                         </div>
@@ -222,7 +222,7 @@ const AddLostFound = () => {
                         <button type="submit" className="btn btn-accent px-8 py-3">
                             Add Post
                         </button>
-                        {/* <iframe width="853" height="480" src="https://www.youtube.com/embed/81iz8c-KDVY" title="Lost something? iLost is the solution!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
+                       
                     </div>
                 </form>
             </div>

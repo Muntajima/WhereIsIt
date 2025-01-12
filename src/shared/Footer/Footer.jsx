@@ -91,7 +91,7 @@ const Footer = () => {
                     <div className="w-[250px] h-[100px] bg-[#d11818] text-center pt-9 text-2xl font-bold text-white ml-36">
                         WhereIsIt</div>
                     <div>
-                        <p className="pt-9">{new Date().getFullYear()} - ©All right reserved by Muntajima Mahbub</p>
+                        <p className="pt-9 pl-24 lg:pl-2">{new Date().getFullYear()} - ©All right reserved by Muntajima Mahbub</p>
                     </div>
                 </nav>
             </footer>

@@ -15,6 +15,7 @@ import MyItems from "../pages/MyItems/MyItems";
 import Updated from "../pages/MyItems/Updated";
 import AllRecoverdItems from "../pages/AllRecoverd/AllRecoverdItems";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import Category from "../pages/Category/Category";
 
 
   const router = createBrowserRouter([
@@ -73,7 +74,12 @@ import ContactUs from "../pages/ContactUs/ContactUs";
         {
           path: 'contact-us',
           element: <ContactUs/>
-        }
+        },
+        {
+          path: '/category',
+          element: <Category/>,
+          loader: () => fetch('https://where-is-it-jet.vercel.app/items') 
+        },
       ]
     },
   ]);

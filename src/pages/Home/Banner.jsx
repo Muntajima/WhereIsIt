@@ -37,7 +37,7 @@ const Banner = () => {
                             <div className="flex-1">
                                 <h1 className="text-3xl font-bold pl-24">Managing lost items no longer a million-dollar headache with <span className="text-red-600">WhereIsIt</span> Lost and Found Page</h1>
                                 <Link to='/lost-found-items'>
-                                <button className="btn bg-blue-300 ml-24 mt-4">Get Started</button>
+                                <button className="btn ml-24 mt-4">Get Started</button>
                                 </Link>
                             </div>
                         </div>
@@ -51,9 +51,9 @@ const Banner = () => {
 
                         <div className="hero-content">
                         <div className="">
-                                <h1 className="text-3xl font-bold pl-96 text-blue-500">Our Online Lost & Found <br />can Help you Find what you are Looking For!</h1>
+                                <h1 className="text-2xl lg:text-3xl font-bold lg:pl-96 text-blue-500 pl-12 ">Our Online Lost & Found <br />can Help you Find what you are Looking For!</h1>
                                 <Link to='/lost-found-items'>
-                                <button className="btn bg-blue-500 ml-96 mt-4">Get Started</button>
+                                <button className="btn bg-blue-500 lg:ml-96 mt-4 ml-12">Get Started</button>
                                 </Link>
                             </div>
                         </div>
@@ -73,7 +73,7 @@ const Banner = () => {
                             <div className="text-left">
                                 <h1 className="text-3xl font-bold pr-8 w-2/3">IF YOU LOST SOMEONE OR SOMETHING BUT FOUND YOURSELF... <br /> YOU'VE WON</h1>
                                 <Link to='/lost-found-items'>
-                                <button className="btn ml-24 mt-4">Get Started</button>
+                                <button className="btn lg:ml-24 mt-4">Get Started</button>
                                 </Link>
                                 
                             </div>

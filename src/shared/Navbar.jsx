@@ -27,10 +27,11 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <li><NavLink to='/' className='btn'>Home</NavLink></li>
-        <li><NavLink to='/allItems' className='btn'>Lost & Found Items Page</NavLink></li>
-        <NavLink to={'/addItems'} className='btn'>Add Lost & Found Item</NavLink>
-        <NavLink to={'/contact-us'} className='btn'>Contact us</NavLink>
+        <li><NavLink to='/' className='btn mr-2'>Home</NavLink></li>
+        <li><NavLink to='/allItems' className='btn mr-2'>Lost & Found Items Page</NavLink></li>
+        <NavLink to={'/addItems'} className='btn mr-2'>Add Lost & Found Item</NavLink>
+        <NavLink to={'/category'} className='btn mr-2'>Category</NavLink>
+        <NavLink to={'/contact-us'} className='btn mr-2'>Contact us</NavLink>
 
          {
             user && <NavLink to={'/allRecovered '} className='btn'>All Recovered Items</NavLink>
@@ -66,7 +67,9 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center">
                     <img src={logo} className="w-12 h-9" />
+                    <Link to='/'>
                     <a className="btn btn-ghost text-2xl">WhereIsIt</a>
+                    </Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

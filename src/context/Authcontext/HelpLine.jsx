@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { AiFillBug } from "react-icons/ai";
 import { AiOutlineQq } from "react-icons/ai";
 import { AiFillTruck } from "react-icons/ai";
 
 
 const HelpLine = () => {
-    useEffect(() =>{
-        document.title = 'Help Line';
-    }, [])
+   
     return (
         <div>   
-            <div className="bg-[#9538E2] pt-12 pb-12">
+            <div className="bg-[#9538E2] pt-12 pb-12 w-full">
                 
                 <div className="flex justify-center mt-12 text-9xl text-white"><AiFillTruck></AiFillTruck></div>
                 
             </div>
             
-            <div className="flex gap-32 items-center mx-24">
+            <div className="lg:flex gap-32 items-center mx-24">
             <div className='flex gap-4 mt-24'>
                 <div className="card bg-purple-300 text-black w-96">
                     <div className="card-body items-center text-center">
@@ -42,10 +39,10 @@ const HelpLine = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col list-decimal mt-24 ml-12">
-                <li><a href="/">Open a dispute</a></li>
-                <li><a href="/">Report IPR infringement</a></li>
-                <li><a href="/">Report abuse</a></li>
+            <div className="flex flex-col list-decimal mt-24 lg:ml-0 ml-2">
+                <li><a href="/contact-us" className="hover:underline">Open a dispute</a></li>
+                <li><a href="/contact-us" className="hover:underline">Report IPR infringement</a></li>
+                <li><a href="/contact-us" className="hover:underline">Report abuse</a></li>
             </div>
             </div>
         </div>

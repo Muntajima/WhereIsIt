@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import LostFoundCard from "../LostFoundCard";
-import { useLoaderData } from "react-router-dom";
+
 
 
 
@@ -8,7 +8,7 @@ const LostFoundItems = () => {
 
     const [items, setItems] = useState([]);
     const [allItems, setAllItems] = useState([]);
-    const products = useLoaderData() || {};
+    //const products = useLoaderData() || {};
 
     useEffect(() => {
         fetch('https://where-is-it-jet.vercel.app/items')
@@ -29,7 +29,7 @@ const LostFoundItems = () => {
     return (
         <div>
             <h2 className="text-2xl font-bold text-center py-6">Latest Lost & Found Items</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-6 ml-12 lg:ml-0">
                 {items.map((item) => (
                     <LostFoundCard key={item._id} item={item} />
                 ))}
