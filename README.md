@@ -1,4 +1,6 @@
 # **WhereIsIt - Lost and Found Platform**  
+###
+<img align="center" src="https://i.ibb.co.com/sC9HdkV/Screenshot-2025-01-05-173641.png"/>
 
 **WhereIsIt** is a full-stack web application designed to connect individuals who have lost personal belongings with those who have found them. The platform provides a seamless way to report, browse, and recover lost and found items.  
 
@@ -6,7 +8,7 @@
 
 ## **Live Demo**  
 
-[**Visit the Live Website**](https://where-is-it-jet.vercel.app/)  
+[**Visit the Live Website**](https://where-is-it-12d17.web.app/)  
 
 ---
 
