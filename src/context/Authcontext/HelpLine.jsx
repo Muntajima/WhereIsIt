@@ -42,8 +42,9 @@ const HelpLine = () => {
                 </div>
             </div>
             <div className="flex flex-col list-decimal mt-24 lg:ml-0 ml-2">
-                <li><a href="/contact-us" className="hover:underline">Open a dispute</a></li>
-                <li><a href="/contact-us" className="hover:underline">Report IPR infringement</a></li>
+                <li><a href="/addItems" className="hover:underline">Open a form</a></li>
+                <li><a href="/allItems" className="hover:underline">Found your lost one</a></li>
+                <li><a href="/contact-us" className="hover:underline">Report us</a></li>
                 <li><a href="/contact-us" className="hover:underline">Report abuse</a></li>
             </div>
             </div>
