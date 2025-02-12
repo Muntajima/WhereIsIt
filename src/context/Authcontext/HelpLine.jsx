@@ -10,7 +10,9 @@ const HelpLine = () => {
         <div>   
             <div className="bg-[#9538E2] pt-12 pb-12 w-full">
                 
-                <div className="flex justify-center mt-12 text-9xl text-white"><AiFillTruck></AiFillTruck></div>
+                <div className="flex flex-col justify-center items-center mt-12 text-white">
+                    <p className="text-5xl">Help Line</p>
+                    <AiFillTruck className="text-9xl"></AiFillTruck></div>
                 
             </div>
             
