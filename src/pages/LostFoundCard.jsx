@@ -11,13 +11,21 @@ const LostFoundCard = ({ item }) => {
     // console.log(_id, postType, thumbnail, title, description, category, location, dateLost, contactName, contactEmail)
     return (
         <div>
-            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4">
+            <div className="max-w-sm h-[500px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-4">
                 <a href="#">
-                    <img className="rounded-t-lg h-[200px] mx-auto mt-4" src={thumbnail} alt="" />
+                    <img className="rounded-t-lg h-[200px] mx-auto" src={thumbnail} alt="" />
                 </a>
                 <div className="p-5">
-                    <a href="#">
+                    <a href="#" className="flex gap-16 items-center">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
+                        <span
+                            className={`badge w-24 font-semibold ${postType === "Lost"
+                                ? "badge-error"
+                                : "badge-success"
+                                }`}
+                        >
+                            {postType}
+                        </span>
                     </a>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{description}</p>
                     <div className="flex flex-col text-sm mt-3">
@@ -31,7 +39,7 @@ const LostFoundCard = ({ item }) => {
                             <span className="font-semibold">Date:</span>{" "}
                             {new Date(dateLost).toLocaleDateString()}
                         </p>
-                        <p>
+                        <p className="pb-4">
                             <span className="font-semibold">Contact:</span> {contactName} (
                             <a
                                 href={`mailto:${contactEmail}`}
@@ -42,16 +50,9 @@ const LostFoundCard = ({ item }) => {
                             )
                         </p>
                     </div>
-                    <div className="card-actions justify-between items-center pt-4">
-                        <Link to={`/items/${_id}`} className= "hover:font-bold pt-1">See Details</Link>
-                        <span
-                            className={`badge w-24 ${postType === "Lost"
-                                ? "badge-error"
-                                : "badge-success"
-                                }`}
-                        >
-                            {postType}
-                        </span>
+                    <div>
+                        <Link to={`/items/${_id}`} className= "hover:underline font-bold">See Details</Link>
+                        
                     </div>
 
                 </div>

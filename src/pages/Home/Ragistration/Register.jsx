@@ -18,7 +18,8 @@ const Register = () => {
         createUser, 
         googleLogin, 
         setUser,  
-        updateUserProfile } = useContext(AuthContext);
+        updateUserProfile,
+        loading } = useContext(AuthContext);
     const navigate = useNavigate();
     
     useEffect(() =>{
@@ -51,7 +52,10 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             setUser(user);
-            console.log(result.user);
+            if(loading){
+                <span className="loading loading-spinner text-error"></span>
+            }
+            //console.log(result.user);
 
             updateUserProfile({displayName: name, photoURL: photo})
             .then(() =>{

@@ -42,7 +42,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className="navbar bg-base-100 fixed z-20 top-0 start-4 border-b px-20">
+        <div className="navbar bg-base-100 fixed z-20 top-0 start-4 border-b px-16">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <div className="flex items-center">
                     <img src={logo} className="w-12 h-9" />
                     <Link to='/'>
-                    <a className="btn hover:bg-red-600 hover:text-white text-2xl">WhereIsIt</a>
+                    <a className="font-bold text-red-600 hover:text-black text-3xl">WhereIsIt</a>
                     </Link>
                 </div>
             </div>
@@ -107,12 +107,12 @@ const Navbar = () => {
 
                 {
                     user ? <>
-                        <button onClick={handleLogout} className="btn mr-6">Logout</button>
+                        <button onClick={handleLogout} className="btn mr-6 hover:bg-red-600 hover:text-white">Logout</button>
                     </>
                         :
                         <>
                             <Link to='/login'>
-                                <button className="btn mr-8">Login</button>
+                                <button className="btn mr-8 hover:bg-red-600 hover:text-white">Login</button>
                             </Link>
                         </>
                 }

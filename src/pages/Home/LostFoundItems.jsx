@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import LostFoundCard from "../LostFoundCard";
+import AuthContext from "../../context/Authcontext/AuthContext";
 
 
 
 
 const LostFoundItems = () => {
-
+    const { loading } = useContext(AuthContext);
     const [items, setItems] = useState([]);
     const [allItems, setAllItems] = useState([]);
     //const products = useLoaderData() || {};
@@ -17,7 +18,9 @@ const LostFoundItems = () => {
                 const sortedData = data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 setAllItems(sortedData); // Store all items
                 setItems(sortedData.slice(0, 6));
-
+                if(loading){
+                    <span className="loading loading-spinner text-error"></span>
+                }
             })
     }, [])
 
