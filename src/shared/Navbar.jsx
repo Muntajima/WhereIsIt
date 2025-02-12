@@ -27,22 +27,22 @@ const Navbar = () => {
             })
     }
     const links = <>
-        <li><NavLink to='/' className='btn mr-2'>Home</NavLink></li>
-        <li><NavLink to='/allItems' className='btn mr-2'>Lost & Found Items Page</NavLink></li>
-        <NavLink to={'/addItems'} className='btn mr-2'>Add Lost & Found Item</NavLink>
-        <NavLink to={'/category'} className='btn mr-2'>Category</NavLink>
-        <NavLink to={'/contact-us'} className='btn mr-2'>Contact us</NavLink>
+        <li><NavLink to='/' className='btn mr-2 hover:bg-red-600 hover:text-white'>Home</NavLink></li>
+        <li><NavLink to='/allItems' className='btn mr-2 hover:bg-red-600 hover:text-white'>Lost & Found Items Page</NavLink></li>
+        <NavLink to={'/addItems'} className='btn mr-2 hover:bg-red-600 hover:text-white'>Add Lost & Found Item</NavLink>
+        <NavLink to={'/category'} className='btn mr-2 hover:bg-red-600 hover:text-white'>Category</NavLink>
+        <NavLink to={'/contact-us'} className='btn mr-2 hover:bg-red-600 hover:text-white'>Contact us</NavLink>
 
          {
-            user && <NavLink to={'/allRecovered '} className='btn'>All Recovered Items</NavLink>
+            user && <NavLink to={'/allRecovered '} className='btn hover:bg-red-600 hover:text-white'>All Recovered Items</NavLink>
         }
          {
-            user && <NavLink to={'/myItems'} className='btn'>Manage My Items</NavLink>
+            user && <NavLink to={'/myItems'} className='btn hover:bg-red-600 hover:text-white'>Manage My Items</NavLink>
         }
 
     </>
     return (
-        <div className="navbar bg-base-100 fixed z-20 top-0 start-4 border-b">
+        <div className="navbar bg-base-100 fixed z-20 top-0 start-4 border-b px-20">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <div className="flex items-center">
                     <img src={logo} className="w-12 h-9" />
                     <Link to='/'>
-                    <a className="btn btn-ghost text-2xl">WhereIsIt</a>
+                    <a className="btn hover:bg-red-600 hover:text-white text-2xl">WhereIsIt</a>
                     </Link>
                 </div>
             </div>

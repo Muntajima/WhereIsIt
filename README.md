@@ -55,7 +55,13 @@
   Browse all lost and found items.  
 
 - **Add Lost/Found Item:**  
-  Submit new posts (private route).  
+  Submit new posts.  
+
+   **Category**  
+  Search all lost and found item by their category.
+
+   **Contact Us:**  
+  User can contact us by email.  
 
 - **Item Details:**  
   View detailed information and mark items as recovered (private route).  
