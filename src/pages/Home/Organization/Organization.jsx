@@ -9,7 +9,7 @@ import logo6 from '../../../assets/companies/preview1.jpg'
 const Organization = () => {
     return (
         <div>
-            <h2 className='text-4xl font-semibold text-center mt-24 mb-8'>Some organizations that use the Lost & Found software of WhereIsIt are...</h2>
+            <h2 className='text-4xl font-semibold text-center mt-24 mb-8'>Some organizations that use WhereIsIt for their lost one, are...</h2>
             <div>
                 <Marquee>
                     <img src={logo1} className='w-52 mr-6' />
